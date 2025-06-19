@@ -263,6 +263,12 @@ WHERE table_schema = 'ceragen' ORDER BY table_name;
 SELECT schemaname, tablename, n_tup_ins as registros
 FROM pg_stat_user_tables 
 WHERE schemaname = 'ceragen';
+
+-- Limpiar intentos fallidos y desbloquear admin
+UPDATE ceragen.segu_user 
+SET login_attempts = 0,
+    user_locked = false
+WHERE user_login_id = 'admin';
 ```
 
 ---
