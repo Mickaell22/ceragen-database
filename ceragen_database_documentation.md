@@ -239,14 +239,15 @@ inp_proof_image_path (evidencia)
 
 ### **PostgreSQL**
 ```bash
-# Navegar a PostgreSQL
+# Navegar a PostgreSQL (La ubicacion de PostgreSQL)
 cd "C:\Program Files\PostgreSQL\17\bin"
 
-# Crear base de datos
-createdb -U postgres DAWA_Project
+# Crear base de datos 
+createdb -U postgres DAWA
 
-# Restaurar backup
-pg_restore -U postgres -W -d DAWA_Project --verbose --clean --no-acl --no-owner "ruta/BCK_BD_CERAGEN_18_junio.sql"
+# Restaurar backup (ruta = donde esta)
+# ejemplo = pg_restore -U postgres -W -d DAWA --if-exists --clean "C:\Users\ASUS\Downloads\BCK_BD_CERAGEN_18_junio.sql"
+pg_restore -U postgres -W -d DAWA --verbose --clean --no-acl --no-owner "ruta/BCK_BD_CERAGEN_18_junio.sql"
 ```
 
 ### **Verificar Restauración**
