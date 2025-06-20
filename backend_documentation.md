@@ -17,29 +17,113 @@
 ## 🗂️ Estructura del Proyecto
 
 ```
-ws_ceragen/
-├── src/
-│   ├── api/
-│   │   ├── Components/          # Lógica de negocio
-│   │   │   ├── Security/        # Autenticación y usuarios
-│   │   │   ├── Admin/           # Administración
-│   │   │   └── Audit/           # Auditoría
-│   │   ├── Services/            # Endpoints REST
-│   │   │   ├── Security/        # /security/*
-│   │   │   └── Admin/           # /admin/*
-│   │   ├── Model/               # Modelos de datos
-│   │   │   ├── Request/         # Validación de entrada
-│   │   │   └── Response/        # Formato de salida
-│   │   └── Routes/
-│   │       └── api_routes.py    # Configuración de rutas
-│   └── utils/
-│       ├── database/            # Conexión PostgreSQL
-│       ├── general/             # Configuración y logs
-│       └── smpt/               # Email
-├── static/
-│   └── swagger.json            # Documentación API
-├── app.py                      # Punto de entrada
-└── requirements.txt            # Dependencias
+DAWA_2_BACKEND/
+└── ws_ceragen/
+    ├── 📄 app.py                     # Punto de entrada Flask
+    ├── 📄 requirements.txt           # Dependencias Python
+    ├── 📁 src/                       # Código fuente principal
+    │   ├── 📁 api/                   # Lógica de la API REST
+    │   │   ├── 📁 Components/        # Componentes de lógica de negocio
+    │   │   │   ├── 📁 Admin/         # Gestión administrativa
+    │   │   │   │   ├── 📄 AdminCicleComponent.py
+    │   │   │   │   ├── 📄 AdminiesComponent.py
+    │   │   │   │   ├── 📄 AdminMaritalStatus.py
+    │   │   │   │   ├── 📄 AdminParameterList.py
+    │   │   │   │   ├── 📄 AdminPeriodComponent.py
+    │   │   │   │   ├── 📄 AdminPersonComponent.py
+    │   │   │   │   ├── 📄 AdminPerson_genre.py
+    │   │   │   │   ├── 📄 AdminUniversityCareerComponent.py
+    │   │   │   │   ├── 📄 CareerPeriod_component.py
+    │   │   │   │   └── 📄 Unit_academy_component.py
+    │   │   │   ├── 📁 Audit/          # Auditoría del sistema
+    │   │   │   │   ├── 📄 AuditComponent.py
+    │   │   │   │   └── 📄 ErrorComponent.py
+    │   │   │   └── 📁 Security/       # Seguridad y autenticación
+    │   │   │       ├── 📄 ComponentMenu.py
+    │   │   │       ├── 📄 GetPersonComponent.py
+    │   │   │       ├── 📄 LoginComponent.py         # ⭐ Login principal
+    │   │   │       ├── 📄 loginDataComponent.py
+    │   │   │       ├── 📄 LogoutComponent.py
+    │   │   │       ├── 📄 menuComponent.py          # ⭐ Menús
+    │   │   │       ├── 📄 MenuRolComponent.py
+    │   │   │       ├── 📄 moduleComponent.py        # ⭐ Módulos
+    │   │   │       ├── 📄 ModuloComponent.py
+    │   │   │       ├── 📄 NotificationComponent.py
+    │   │   │       ├── 📄 rolComponent.py           # ⭐ Roles
+    │   │   │       ├── 📄 RolSistemComponent.py
+    │   │   │       ├── 📄 TokenComponent.py         # ⭐ JWT Tokens
+    │   │   │       ├── 📄 URCPComponent.py
+    │   │   │       ├── 📄 UserComponent.py          # ⭐ Usuarios
+    │   │   │       └── 📄 UserRolComponent.py
+    │   │   ├── 📁 Model/              # Modelos de datos
+    │   │   │   ├── 📁 Request/        # Validación de entrada
+    │   │   │   │   ├── 📁 Admin/      # Requests administrativos
+    │   │   │   │   │   ├── 📄 MaritalStatusRequest.py
+    │   │   │   │   │   ├── 📄 ParameterListRequest.py
+    │   │   │   │   │   ├── 📄 PersonGenreRequest.py
+    │   │   │   │   │   └── 📄 PersonRequest.py
+    │   │   │   │   └── 📁 Security/   # Requests de seguridad
+    │   │   │   │       ├── 📄 DeleteService.py
+    │   │   │   │       ├── 📄 InsertMenu.py
+    │   │   │   │       ├── 📄 InsertMenuRol.py
+    │   │   │   │       ├── 📄 InsertModulo.py
+    │   │   │   │       ├── 📄 InsertRolSistem.py
+    │   │   │   │       ├── 📄 InsertRolUser.py
+    │   │   │   │       ├── 📄 InsertUser.py          # ⭐ Crear usuario
+    │   │   │   │       ├── 📄 Inserturcp.py
+    │   │   │   │       ├── 📄 LoginRequest.py        # ⭐ Login request
+    │   │   │   │       ├── 📄 LogoutRequest.py
+    │   │   │   │       ├── 📄 NotificationsReadRequest.py
+    │   │   │   │       ├── 📄 RecoveringPassword.py
+    │   │   │   │       ├── 📄 SelectSecurity.py
+    │   │   │   │       ├── 📄 UpdateMenu.py
+    │   │   │   │       ├── 📄 UpdateMenuRol.py
+    │   │   │   │       ├── 📄 UpdateModulo.py
+    │   │   │   │       ├── 📄 UpdateRolSistem.py
+    │   │   │   │       ├── 📄 UpdateRolUser.py
+    │   │   │   │       ├── 📄 UpdateUser.py
+    │   │   │   │       ├── 📄 UpdateUserPassword.py
+    │   │   │   │       ├── 📄 Updateurcp.py
+    │   │   │   │       └── 📄 ValidateDataRequest.py # ⭐ Validaciones
+    │   │   │   └── 📁 Response/       # Formato de salida
+    │   │   │       ├── 📁 Audit/      # Responses de auditoría
+    │   │   │       │   └── 📄 AuditSQLResponse.py
+    │   │   │       └── 📁 Security/   # Responses de seguridad
+    │   │   │           └── 📄 MenuResponse.py
+    │   │   ├── 📁 Routes/             # Configuración de rutas
+    │   │   │   └── 📄 api_routes.py              # ⭐ Todas las rutas
+    │   │   └── 📁 Services/           # Endpoints REST
+    │   │       ├── 📁 Admin/          # Servicios administrativos
+    │   │       │   ├── 📄 AdminMaritalStatusservice.py
+    │   │       │   ├── 📄 AdminParameterListservice.py
+    │   │       │   ├── 📄 AdminPersonService.py
+    │   │       │   └── 📄 AdminPerson_genre_service.py
+    │   │       ├── 📁 Audit/          # Servicios de auditoría
+    │   │       │   ├── 📄 AuditService.py
+    │   │       │   └── 📄 ErrorService.py
+    │   │       └── 📁 Security/       # Servicios de seguridad
+    │   │           ├── 📄 GetPersonService.py
+    │   │           ├── 📄 LoginService.py        # ⭐ Endpoint login
+    │   │           ├── 📄 LogoutService.py
+    │   │           ├── 📄 MenuRolServices.py
+    │   │           ├── 📄 MenuService.py
+    │   │           ├── 📄 ModuloService.py
+    │   │           ├── 📄 NotificationService.py
+    │   │           ├── 📄 RolSistemService.py
+    │   │           ├── 📄 URCPService.py
+    │   │           ├── 📄 UserRolService.py
+    │   │           └── 📄 UserService.py         # ⭐ CRUD usuarios
+    │   └── 📁 utils/                  # Utilidades del sistema
+    │       ├── 📁 database/           # Conexión base de datos
+    │       │   └── 📄 connection_db.py           # ⭐ Manejo PostgreSQL
+    │       ├── 📁 general/            # Configuración general
+    │       │   ├── 📄 config.py                  # ⭐ Configuración
+    │       │   ├── 📄 logs.py                    # ⭐ Sistema de logs
+    │       │   └── 📄 response.py                # ⭐ Formatos respuesta
+    │       └── 📁 smpt/               # Email/SMTP
+    │           └── 📄 requirements.txt           # Dependencias SMTP
+    └── 📁 static/                     # Archivos estáticos
+        └── 📄 swagger.json                       # ⭐ Documentación API
 ```
 
 ---
