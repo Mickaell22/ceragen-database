@@ -8,6 +8,10 @@
 
 ---
 
+## Comandos basicos
+pip install -r requirements.txt
+
+
 ## 🏗️ ARQUITECTURA DEL SISTEMA
 
 ### **Módulos Principales**
