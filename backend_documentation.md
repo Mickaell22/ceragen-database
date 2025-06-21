@@ -21,6 +21,11 @@ DAWA_2_BACKEND/
 └── ws_ceragen/
     ├── 📄 app.py                     # Punto de entrada Flask
     ├── 📄 requirements.txt           # Dependencias Python
+    ├── 📄 package.json               # Configuración Node.js
+    ├── 📄 package-lock.json          # Lock de dependencias Node
+    ├── 📄 .env                       # Variables de entorno
+    ├── 📄 .gitignore                 # Archivos ignorados por Git
+    ├── 📄 README.md                  # Documentación del proyecto
     ├── 📁 src/                       # Código fuente principal
     │   ├── 📁 api/                   # Lógica de la API REST
     │   │   ├── 📁 Components/        # Componentes de lógica de negocio
@@ -89,7 +94,13 @@ DAWA_2_BACKEND/
     │   │   │       ├── 📁 Audit/      # Responses de auditoría
     │   │   │       │   └── 📄 AuditSQLResponse.py
     │   │   │       └── 📁 Security/   # Responses de seguridad
-    │   │   │           └── 📄 MenuResponse.py
+    │   │   │           ├── 📄 MenuResponse.py
+    │   │   │           ├── 📄 ModuloResponse.py
+    │   │   │           ├── 📄 NotificationResponse.py
+    │   │   │           ├── 📄 PersonResponse.py
+    │   │   │           ├── 📄 RolSistemResponse.py
+    │   │   │           ├── 📄 UserResponse.py
+    │   │   │           └── 📄 UserRolResponse.py
     │   │   ├── 📁 Routes/             # Configuración de rutas
     │   │   │   └── 📄 api_routes.py              # ⭐ Todas las rutas
     │   │   └── 📁 Services/           # Endpoints REST
@@ -117,12 +128,21 @@ DAWA_2_BACKEND/
     │       ├── 📁 database/           # Conexión base de datos
     │       │   └── 📄 connection_db.py           # ⭐ Manejo PostgreSQL
     │       ├── 📁 general/            # Configuración general
-    │       │   ├── 📄 config.py                  # ⭐ Configuración
-    │       │   ├── 📄 logs.py                    # ⭐ Sistema de logs
-    │       │   └── 📄 response.py                # ⭐ Formatos respuesta
+    │       │   ├── 📁 LOGS/           # Carpeta de logs
+    │       │   ├── 📄 config.cfg      # Archivo de configuración
+    │       │   ├── 📄 config.py       # ⭐ Configuración Python
+    │       │   ├── 📄 logs.py         # ⭐ Sistema de logs
+    │       │   └── 📄 response.py     # ⭐ Formatos respuesta
+    │       ├── 📁 middleware/         # Middleware personalizado
+    │       │   └── 📄 require_api_key.py
+    │       ├── 📁 pdf/                # Generación de PDFs
+    │       │   └── 📄 generate_pdf.py
     │       └── 📁 smpt/               # Email/SMTP
+    │           ├── 📄 smtp_google.py
+    │           ├── 📄 smtp_officeUG.py
     │           └── 📄 requirements.txt           # Dependencias SMTP
     └── 📁 static/                     # Archivos estáticos
+        ├── 📄 MessagePassword.html               # Template de email
         └── 📄 swagger.json                       # ⭐ Documentación API
 ```
 
