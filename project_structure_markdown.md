@@ -744,7 +744,7 @@ FRONTEND/
 ## 🏗️ Arquitectura de Componentes
 
 ### 📊 **Aplicaciones Principales**
-```
+
 🔑 Sistema de Autenticación
 ├── Login/Register/ForgotPassword
 ├── Two-Factor Authentication
