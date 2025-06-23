@@ -24,14 +24,15 @@ FRONTEND/
 ├── 📁 node_modules/                     # Dependencias instaladas
 ├── 📁 src/                              # Código fuente principal
 │   ├── 📁 _mockApis/                    # APIs simuladas
+│   │   ├── 📄 index.js                  # Exportaciones principales
+│   │   ├── 📄 mock.js                   # Configuración mock
 │   │   ├── 📁 blog/                     # Mock datos blog
-│   │   │   ├── 📄 BlogData.js
-│   │   │   └── 📄 index.js
+│   │   │   └── 📄 blogData.js
 │   │   ├── 📁 chat/                     # Mock datos chat
-│   │   │   └── 📄 ChatData.js
+│   │   │   └── 📄 Chatdata.js
 │   │   ├── 📁 contacts/                 # Mock datos contactos
 │   │   │   └── 📄 ContactsData.js
-│   │   ├── 📁 ecommerce/                # Mock datos ecommerce
+│   │   ├── 📁 eCommerce/                # Mock datos ecommerce
 │   │   │   └── 📄 ProductsData.js
 │   │   ├── 📁 email/                    # Mock datos email
 │   │   │   └── 📄 EmailData.js
@@ -46,6 +47,7 @@ FRONTEND/
 │   │       └── 📄 UsersData.js
 │   │
 │   ├── 📁 assets/                       # Recursos estáticos
+│   │   ├── 📄 react.svg                 # Logo React
 │   │   └── 📁 images/                   # Imágenes del proyecto
 │   │       ├── 📁 backgrounds/          # Fondos e imágenes de fondo
 │   │       │   ├── 📄 bronze.png
@@ -57,11 +59,11 @@ FRONTEND/
 │   │       │   ├── 📄 unlimited-bg.png
 │   │       │   ├── 📄 website-under-construction.gif
 │   │       │   ├── 📄 welcome-bg2.png
-│   │       │   ├── 📄 errorimg.svg       # ⭐ Imagen de error
-│   │       │   ├── 📄 login-bg.svg       # ⭐ Fondo login
-│   │       │   ├── 📄 maintenance.svg    # ⭐ Mantenimiento
+│   │       │   ├── 📄 errorimg.svg
+│   │       │   ├── 📄 login-bg.svg
+│   │       │   ├── 📄 maintenance.svg
 │   │       │   ├── 📄 maintenance2.svg
-│   │       │   └── 📄 welcome-bg.svg     # ⭐ Bienvenida
+│   │       │   └── 📄 welcome-bg.svg
 │   │       ├── 📁 blog/                 # Imágenes del blog
 │   │       │   ├── 📄 blog-img1.jpg
 │   │       │   ├── 📄 blog-img2.jpg
@@ -69,13 +71,12 @@ FRONTEND/
 │   │       │   ├── 📄 blog-img4.jpg
 │   │       │   ├── 📄 blog-img5.jpg
 │   │       │   ├── 📄 blog-img6.jpg
-│   │       │   ├── 📄 blog-img7.jpg
 │   │       │   ├── 📄 blog-img8.jpg
 │   │       │   ├── 📄 blog-img9.jpg
 │   │       │   ├── 📄 blog-img10.jpg
 │   │       │   └── 📄 blog-img11.jpg
 │   │       ├── 📁 breadcrumb/           # Migas de pan
-│   │       │   ├── 📄 ChatBg.png
+│   │       │   ├── 📄 ChatBc.png
 │   │       │   └── 📄 emailSv.png
 │   │       ├── 📁 chat/                 # Iconos chat
 │   │       │   ├── 📄 icon-adobe.svg
@@ -90,6 +91,9 @@ FRONTEND/
 │   │       │   ├── 📄 icon-flag-sa.svg
 │   │       │   └── 📄 icon-flag-vn.svg
 │   │       ├── 📁 landingpage/          # Landing page
+│   │       │   ├── 📄 bannerimg1.svg
+│   │       │   ├── 📄 bannerimg2.svg
+│   │       │   ├── 📄 favicon.png
 │   │       │   ├── 📁 apps/             # Screenshots apps
 │   │       │   │   ├── 📄 app-blog-detail.jpg
 │   │       │   │   ├── 📄 app-blog.jpg
@@ -121,36 +125,29 @@ FRONTEND/
 │   │       │   │   ├── 📄 logo-react.svg
 │   │       │   │   ├── 📄 logo-redux.svg
 │   │       │   │   └── 📄 logo-ts.svg
-│   │       │   ├── 📁 profile/          # Imágenes perfil
+│   │       │   ├── 📁 profile/          # Imágenes perfil landing
 │   │       │   │   ├── 📄 testimonial1.png
 │   │       │   │   ├── 📄 testimonial2.png
 │   │       │   │   ├── 📄 testimonial3.png
 │   │       │   │   ├── 📄 user1.png
 │   │       │   │   ├── 📄 user2.png
-│   │       │   │   ├── 📄 user3.png
-│   │       │   │   ├── 📄 user4.png
-│   │       │   │   ├── 📄 user5.png
-│   │       │   │   ├── 📄 user6.png
-│   │       │   │   ├── 📄 user7.png
-│   │       │   │   ├── 📄 user8.png
-│   │       │   │   ├── 📄 user9.png
-│   │       │   │   └── 📄 user-10.jpg
+│   │       │   │   └── 📄 user3.png
 │   │       │   └── 📁 shape/            # Elementos gráficos
 │   │       │       ├── 📄 badge.png
 │   │       │       ├── 📄 badge.svg
-│   │       │       ├── 📄 line-bg2.svg
+│   │       │       ├── 📄 line-bg-2.svg
 │   │       │       ├── 📄 line-bg.svg
 │   │       │       ├── 📄 shape-1.svg
-│   │       │       ├── 📄 shape-2.svg
-│   │       │       ├── 📄 bannering1.svg
-│   │       │       ├── 📄 bannering2.svg
-│   │       │       └── 📄 favicon.png
+│   │       │       └── 📄 shape-2.svg
 │   │       ├── 📁 logos/                # Logos aplicación
 │   │       │   ├── 📄 dark-logo.svg
-│   │       │   ├── 📄 favicon.ico
-│   │       │   └── 📄 light-logo.svg
+│   │       │   ├── 📄 dark-rtl-logo.svg
+│   │       │   ├── 📄 light-logo-rtl.svg
+│   │       │   ├── 📄 light-logo.svg
+│   │       │   └── 📄 logoIcon.svg
 │   │       ├── 📁 products/             # Imágenes productos
 │   │       │   ├── 📄 empty-shopping-bag2.gif
+│   │       │   ├── 📄 empty-shopping-cart.svg
 │   │       │   ├── 📄 payment-complete.gif
 │   │       │   ├── 📄 payment.svg
 │   │       │   ├── 📄 s1.jpg
@@ -165,411 +162,421 @@ FRONTEND/
 │   │       │   ├── 📄 s10.jpg
 │   │       │   ├── 📄 s11.jpg
 │   │       │   └── 📄 s12.jpg
+│   │       ├── 📁 profile/              # Imágenes perfil usuarios
+│   │       │   ├── 📄 user-1.jpg
+│   │       │   ├── 📄 user-2.jpg
+│   │       │   ├── 📄 user-3.jpg
+│   │       │   ├── 📄 user-4.jpg
+│   │       │   ├── 📄 user-5.jpg
+│   │       │   ├── 📄 user-6.jpg
+│   │       │   ├── 📄 user-7.jpg
+│   │       │   ├── 📄 user-8.jpg
+│   │       │   ├── 📄 user-9.jpg
+│   │       │   └── 📄 user-10.jpg
 │   │       └── 📁 svgs/                 # Iconos SVG
+│   │           ├── 📄 cart-icon.svg
+│   │           ├── 📄 facebook-icon.svg
+│   │           ├── 📄 google-icon.svg
+│   │           ├── 📄 icon-account.svg
+│   │           ├── 📄 icon-bars.svg
+│   │           ├── 📄 icon-briefcase.svg
+│   │           ├── 📄 icon-connect.svg
+│   │           ├── 📄 icon-dd-application.svg
+│   │           ├── 📄 icon-dd-cart.svg
+│   │           ├── 📄 icon-dd-chat.svg
+│   │           ├── 📄 icon-dd-date.svg
+│   │           ├── 📄 icon-dd-invoice.svg
+│   │           ├── 📄 icon-dd-lifebuoy.svg
+│   │           ├── 📄 icon-dd-message-box.svg
+│   │           ├── 📄 icon-dd-mobile.svg
+│   │           ├── 📄 icon-favorites.svg
+│   │           ├── 📄 icon-inbox.svg
+│   │           ├── 📄 icon-mailbox.svg
+│   │           ├── 📄 icon-master-card-2.svg
+│   │           ├── 📄 icon-master-card.svg
+│   │           ├── 📄 icon-office-bag-2.svg
+│   │           ├── 📄 icon-office-bag.svg
+│   │           ├── 📄 icon-paypal.svg
+│   │           ├── 📄 icon-pie.svg
+│   │           ├── 📄 icon-speech-bubble.svg
+│   │           ├── 📄 icon-tasks.svg
+│   │           ├── 📄 icon-user-male.svg
+│   │           ├── 📄 mastercard.svg
+│   │           ├── 📄 paypal.svg
 │   │           └── 📄 react.svg
 │   │
 │   ├── 📁 components/                   # Componentes React
 │   │   ├── 📁 apps/                     # Aplicaciones principales
 │   │   │   ├── 📁 blog/                 # Sistema de blog
+│   │   │   │   ├── 📄 BlogCard.js
+│   │   │   │   ├── 📄 BlogFeaturedCard.js
+│   │   │   │   ├── 📄 BlogListing.js
 │   │   │   │   └── 📁 detail/           # Detalle del blog
-│   │   │   │       ├── 📄 BlogComment.js    # ⭐ Comentarios
-│   │   │   │       ├── 📄 BlogDetails.js    # ⭐ Detalles entrada
-│   │   │   │       ├── 📄 BlogCard.js       # ⭐ Tarjeta blog
-│   │   │   │       ├── 📄 BlogFeaturedCard.js
-│   │   │   │       └── 📄 BlogListing.js    # ⭐ Lista blogs
+│   │   │   │       ├── 📄 BlogComment.js
+│   │   │   │       └── 📄 BlogDetail.js
 │   │   │   ├── 📁 chats/                # Sistema de chat
-│   │   │   │   ├── 📄 ChatContent.js        # ⭐ Contenido chat
-│   │   │   │   ├── 📄 ChatInsideSidebar.js  # ⭐ Sidebar chat
-│   │   │   │   ├── 📄 ChatListing.js        # ⭐ Lista chats
+│   │   │   │   ├── 📄 ChatContent.js
+│   │   │   │   ├── 📄 ChatInsideSidebar.js
+│   │   │   │   ├── 📄 ChatListing.js
 │   │   │   │   ├── 📄 ChatMsgSent.js
 │   │   │   │   └── 📄 ChatSidebar.js
 │   │   │   ├── 📁 contacts/             # Gestión contactos
-│   │   │   │   ├── 📄 ContactAdd.js         # ⭐ Añadir contacto
-│   │   │   │   ├── 📄 ContactDetails.js     # ⭐ Detalles contacto
+│   │   │   │   ├── 📄 ContactAdd.js
+│   │   │   │   ├── 📄 ContactDetails.js
 │   │   │   │   ├── 📄 ContactFilter.js
 │   │   │   │   ├── 📄 ContactList.js
 │   │   │   │   ├── 📄 ContactListItem.js
-│   │   │   │   └── 📄 ContactSearch.js      # ⭐ Búsqueda
+│   │   │   │   └── 📄 ContactSearch.js
 │   │   │   ├── 📁 ecommerce/            # Sistema ecommerce
 │   │   │   │   ├── 📁 productCart/      # Carrito compras
-│   │   │   │   │   ├── 📄 AddToCart.js      # ⭐ Añadir carrito
-│   │   │   │   │   └── 📄 AlertCart.js      # ⭐ Alertas carrito
+│   │   │   │   │   ├── 📄 AddToCart.js
+│   │   │   │   │   └── 📄 AlertCart.js
 │   │   │   │   ├── 📁 productCheckout/  # Checkout proceso
-│   │   │   │   │   ├── 📄 FinalStep.js      # ⭐ Paso final
-│   │   │   │   │   ├── 📄 FirstStep.js      # ⭐ Primer paso
+│   │   │   │   │   ├── 📄 FinalStep.js
+│   │   │   │   │   ├── 📄 FirstStep.js
 │   │   │   │   │   ├── 📄 HorizontalStepper.js
 │   │   │   │   │   ├── 📄 ProductCheckout.js
 │   │   │   │   │   ├── 📄 SecondStep.js
-│   │   │   │   │   └── 📄 ThirdStep.js      # ⭐ Tercer paso
+│   │   │   │   │   └── 📄 ThirdStep.js
 │   │   │   │   ├── 📁 productDetail/    # Detalle producto
 │   │   │   │   │   ├── 📄 Carousel.css
-│   │   │   │   │   ├── 📄 ProductCarousel.js # ⭐ Carrusel
-│   │   │   │   │   ├── 📄 ProductDesc.js     # ⭐ Descripción
+│   │   │   │   │   ├── 📄 ProductCarousel.js
+│   │   │   │   │   ├── 📄 ProductDesc.js
 │   │   │   │   │   ├── 📄 ProductDetail.js
-│   │   │   │   │   ├── 📄 ProductRelated.js  # ⭐ Relacionados
+│   │   │   │   │   ├── 📄 ProductRelated.js
 │   │   │   │   │   └── 📄 SliderData.js
 │   │   │   │   ├── 📁 productGrid/      # Grilla productos
-│   │   │   │   │   ├── 📄 ProductFilter.js   # ⭐ Filtros
-│   │   │   │   │   ├── 📄 ProductList.js     # ⭐ Lista productos
-│   │   │   │   │   ├── 📄 ProductSearch.js   # ⭐ Búsqueda
-│   │   │   │   │   └── 📄 ProductSidebar.js  # ⭐ Sidebar
-│   │   │   │   └── 📁 productTableList/ # Tabla productos
+│   │   │   │   │   ├── 📄 ProductFilter.js
+│   │   │   │   │   ├── 📄 ProductList.js
+│   │   │   │   │   ├── 📄 ProductSearch.js
+│   │   │   │   │   └── 📄 ProductSidebar.js
+│   │   │   │   └── 📁 ProductTableList/ # Tabla productos
 │   │   │   │       └── 📄 ProductTableList.js
 │   │   │   ├── 📁 email/                # Sistema email
-│   │   │   │   ├── 📄 EmailActions.js       # ⭐ Acciones email
-│   │   │   │   ├── 📄 EmailCompose.js       # ⭐ Redactar
-│   │   │   │   ├── 📄 EmailContent.js       # ⭐ Contenido
+│   │   │   │   ├── 📄 EmailActions.js
+│   │   │   │   ├── 📄 EmailCompose.js
+│   │   │   │   ├── 📄 EmailContent.js
 │   │   │   │   ├── 📄 EmailFilter.js
 │   │   │   │   ├── 📄 EmailList.js
 │   │   │   │   ├── 📄 EmailListItem.js
-│   │   │   │   └── 📄 EmailSearch.js        # ⭐ Búsqueda
+│   │   │   │   └── 📄 EmailSearch.js
 │   │   │   ├── 📁 notes/                # Sistema notas
-│   │   │   │   ├── 📄 AddNotes.js           # ⭐ Añadir nota
-│   │   │   │   ├── 📄 NoteContent.js        # ⭐ Contenido nota
+│   │   │   │   ├── 📄 AddNotes.js
+│   │   │   │   ├── 📄 NoteContent.js
 │   │   │   │   ├── 📄 NoteList.js
-│   │   │   │   └── 📄 NoteSidebar.js        # ⭐ Sidebar notas
+│   │   │   │   └── 📄 NoteSidebar.js
 │   │   │   ├── 📁 tickets/              # Sistema tickets
-│   │   │   │   ├── 📄 TicketFilter.js       # ⭐ Filtro tickets
-│   │   │   │   └── 📄 TicketListing.js      # ⭐ Lista tickets
+│   │   │   │   ├── 📄 TicketFilter.js
+│   │   │   │   └── 📄 TicketListing.js
 │   │   │   └── 📁 userprofile/          # Perfil usuario
 │   │   │       ├── 📁 followers/        # Seguidores
-│   │   │       │   └── 📄 FollowerCard.js   # ⭐ Tarjeta seguidor
+│   │   │       │   └── 📄 FollowerCard.js
 │   │   │       ├── 📁 friends/          # Amigos
-│   │   │       │   └── 📄 FriendsCard.js    # ⭐ Tarjeta amigo
+│   │   │       │   └── 📄 FriendsCard.js
 │   │   │       ├── 📁 gallery/          # Galería
-│   │   │       │   └── 📄 GalleryCard.js    # ⭐ Tarjeta galería
+│   │   │       │   └── 📄 GalleryCard.js
 │   │   │       └── 📁 profile/          # Perfil
-│   │   │           ├── 📄 IntroCard.js      # ⭐ Intro
-│   │   │           ├── 📄 PhotosCard.js     # ⭐ Fotos
-│   │   │           ├── 📄 Post.js           # ⭐ Post
-│   │   │           ├── 📄 PostComments.js   # ⭐ Comentarios
+│   │   │           ├── 📄 IntroCard.js
+│   │   │           ├── 📄 PhotosCard.js
+│   │   │           ├── 📄 Post.js
+│   │   │           ├── 📄 PostComments.js
 │   │   │           ├── 📄 PostItem.js
 │   │   │           ├── 📄 PostTextBox.js
-│   │   │           ├── 📄 ProfileBanner.js  # ⭐ Banner perfil
-│   │   │           └── 📄 ProfileTab.js     # ⭐ Tabs perfil
+│   │   │           ├── 📄 ProfileBanner.js
+│   │   │           └── 📄 ProfileTab.js
 │   │   ├── 📁 container/                # Contenedores
-│   │   │   └── 📄 PageContainer.js          # ⭐ Container página
+│   │   │   └── 📄 PageContainer.js
 │   │   ├── 📁 custom-scroll/            # Scroll personalizado
 │   │   │   └── 📄 Scrollbar.js
-│   │   └── 📁 dashboards/               # Dashboards
-│   │       ├── 📁 ecommerce/            # Dashboard ecommerce
-│   │       │   ├── 📄 Expence.js
-│   │       │   ├── 📄 Growth.js
-│   │       │   ├── 📄 MonthlyEarnings.js
-│   │       │   ├── 📄 PaymentGateways.js
-│   │       │   ├── 📄 ProductPerformances.js
-│   │       │   ├── 📄 RecentTransactions.js
-│   │       │   ├── 📄 RevenueUpdates.js
-│   │       │   ├── 📄 Sales.js
-│   │       │   ├── 📄 SalesOverview.js
-│   │       │   ├── 📄 SalesTwo.js
-│   │       │   ├── 📄 TotalEarnings.js
-│   │       │   ├── 📄 WelcomeCard.js
-│   │       │   └── 📄 YearlySales.js
-│   │       └── 📁 modern/               # Dashboard moderno
-│   │           ├── 📄 Customers.js
-│   │           ├── 📄 EmployeesSalary.js
-│   │           ├── 📄 MonthlyEarnings.js
-│   │           ├── 📄 Projects.js
-│   │           ├── 📄 RevenueUpdates.js
-│   │           ├── 📄 SellingProducts.js
-│   │           ├── 📄 Social.js
-│   │           ├── 📄 TopCards.js
-│   │           ├── 📄 TopPerformData.js
-│   │           ├── 📄 TopPerformers.js
-│   │           ├── 📄 WeeklyStats.js
-│   │           └── 📄 YearlyBreakup.js
-│   │
-│   ├── 📁 forms/                        # Componentes formularios
-│   │   ├── 📁 form-elements/            # Elementos formulario
-│   │   │   ├── 📁 autoComplete/         # Autocompletado
-│   │   │   │   ├── 📄 CheckboxesAutocomplete.js
-│   │   │   │   ├── 📄 ComboBoxAutocomplete.js
-│   │   │   │   ├── 📄 ControlledStateAutocomplete.js
-│   │   │   │   ├── 📄 countrydata.js
-│   │   │   │   ├── 📄 CountrySelectAutocomplete.js
-│   │   │   │   ├── 📄 data.js
-│   │   │   │   ├── 📄 FreeSoloAutocomplete.js
-│   │   │   │   ├── 📄 MultipleValuesAutocomplete.js
-│   │   │   │   └── 📄 SizesAutocomplete.js
-│   │   │   ├── 📁 button/               # Botones
-│   │   │   │   ├── 📄 ColorButtonGroup.js
-│   │   │   │   ├── 📄 ColorButtons.js
-│   │   │   │   ├── 📄 DefaultButtonGroup.js
-│   │   │   │   ├── 📄 DefaultButtons.js
-│   │   │   │   ├── 📄 FabColorButtons.js
-│   │   │   │   ├── 📄 FabDefaultButton.js
-│   │   │   │   ├── 📄 FabSizeButtons.js
-│   │   │   │   ├── 📄 IconColorButtons.js
-│   │   │   │   ├── 📄 IconLoadingButtons.js
-│   │   │   │   ├── 📄 IconSizeButtons.js
-│   │   │   │   ├── 📄 OutlinedColorButtons.js
-│   │   │   │   ├── 📄 OutlinedDefaultButtons.js
-│   │   │   │   ├── 📄 OutlinedIconButtons.js
-│   │   │   │   ├── 📄 OutlinedSizeButtons.js
-│   │   │   │   ├── 📄 SizeButton.js
-│   │   │   │   ├── 📄 SizeButtonGroup.js
-│   │   │   │   ├── 📄 TextButtonGroup.js
-│   │   │   │   ├── 📄 TextColorButtons.js
-│   │   │   │   ├── 📄 TextDefaultButtons.js
-│   │   │   │   ├── 📄 TextIconButtons.js
-│   │   │   │   ├── 📄 TextSizeButton.js
-│   │   │   │   └── 📄 VerticalButtonGroup.js
-│   │   │   ├── 📁 checkbox/             # Checkboxes
-│   │   │   │   ├── 📄 Colors.js
-│   │   │   │   ├── 📄 Custom.js
-│   │   │   │   ├── 📄 Default.js
-│   │   │   │   ├── 📄 DefaultColors.js
-│   │   │   │   ├── 📄 Position.js
-│   │   │   │   └── 📄 Sizes.js
-│   │   │   ├── 📁 radio/                # Radio buttons
-│   │   │   │   ├── 📄 ColorLabel.js
-│   │   │   │   ├── 📄 Colors.js
-│   │   │   │   ├── 📄 Custom.js
-│   │   │   │   ├── 📄 Default.js
-│   │   │   │   ├── 📄 Position.js
-│   │   │   │   └── 📄 Sizes.js
-│   │   │   └── 📁 switch/               # Switches
-│   │   │       ├── 📄 Colors.js
-│   │   │       ├── 📄 Custom.js
-│   │   │       ├── 📄 Default.js
-│   │   │       ├── 📄 DefaultLabel.js
-│   │   │       ├── 📄 Position.js
-│   │   │       └── 📄 Sizes.js
-│   │   ├── 📁 form-horizontal/          # Formularios horizontales
-│   │   │   ├── 📄 BasicIcons.js
-│   │   │   ├── 📄 BasicLayout.js
-│   │   │   ├── 📄 CollapsibleForm.js
-│   │   │   ├── 📄 FormLabelAlignment.js
-│   │   │   ├── 📄 FormSeparator.js
-│   │   │   └── 📄 FormTabs.js
-│   │   ├── 📁 form-layouts/             # Layouts formularios
-│   │   │   ├── 📄 FbBasicHeaderForm.js
-│   │   │   ├── 📄 FbDefaultForm.js
-│   │   │   ├── 📄 FbDisabledForm.js
-│   │   │   ├── 📄 FbInputVariants.js
-│   │   │   ├── 📄 FbLeftIconForm.js
-│   │   │   ├── 📄 FbOrdinaryForm.js
-│   │   │   ├── 📄 FbReadonlyForm.js
-│   │   │   ├── 📄 FbRightIconForm.js
-│   │   │   └── 📄 index.js
-│   │   ├── 📁 form-validation/          # Validación formularios
-│   │   │   ├── 📄 FVCheckbox.js
-│   │   │   ├── 📄 FVLogin.js
-│   │   │   ├── 📄 FVOnLeave.js
-│   │   │   ├── 📄 FVRadio.js
-│   │   │   ├── 📄 FVRegister.js
-│   │   │   └── 📄 FVSelect.js
-│   │   └── 📁 form-vertical/            # Formularios verticales
-│   │       ├── 📄 BasicIcons.js
-│   │       ├── 📄 BasicLayout.js
-│   │       ├── 📄 CollapsibleForm.js
-│   │       ├── 📄 FormSeparator.js
-│   │       └── 📄 FormTabs.js
-│   │
-│   ├── 📁 theme-elements/               # Elementos temáticos
-│   │   ├── 📄 CustomCheckbox.js         # ⭐ Checkbox personalizado
-│   │   ├── 📄 CustomDisabledButton.js   # ⭐ Botón deshabilitado
-│   │   ├── 📄 CustomFormLabel.js        # ⭐ Label personalizado
-│   │   ├── 📄 CustomOutlinedButton.js   # ⭐ Botón outlined
-│   │   ├── 📄 CustomOutlinedInput.js    # ⭐ Input outlined
-│   │   ├── 📄 CustomRadio.js            # ⭐ Radio personalizado
-│   │   ├── 📄 CustomRangeSlider.js      # ⭐ Slider rango
-│   │   ├── 📄 CustomSelect.js           # ⭐ Select personalizado
-│   │   ├── 📄 CustomSlider.js           # ⭐ Slider personalizado
-│   │   ├── 📄 CustomSocialButton.js     # ⭐ Botón social
-│   │   ├── 📄 CustomSwitch.js           # ⭐ Switch personalizado
-│   │   └── 📄 CustomTextField.js        # ⭐ TextField personalizado
-│   │
-│   ├── 📁 landingpage/                  # Página de inicio
-│   │   ├── 📁 animation/                # Animaciones
-│   │   │   └── 📄 Animation.js
-│   │   ├── 📁 banner/                   # Banner principal
-│   │   │   ├── 📄 Banner.js             # ⭐ Banner principal
-│   │   │   └── 📄 BannerContent.js      # ⭐ Contenido banner
-│   │   ├── 📁 c2a/                      # Call to Action
-│   │   │   ├── 📄 C2a.js
-│   │   │   ├── 📄 C2a2.js
-│   │   │   └── 📄 GuaranteeCard.js
-│   │   ├── 📁 demo-slider/              # Slider demos
-│   │   │   ├── 📄 demo-slider.css
-│   │   │   ├── 📄 DemoSlider.js
-│   │   │   └── 📄 DemoTitle.js
-│   │   ├── 📁 features/                 # Características
-│   │   │   ├── 📄 Features.js
-│   │   │   └── 📄 FeatureTitle.js
-│   │   ├── 📁 footer/                   # Pie de página
-│   │   │   └── 📄 Footer.js
-│   │   ├── 📁 frameworks/               # Marcos de trabajo
-│   │   │   ├── 📄 Frameworks.js
-│   │   │   └── 📄 FrameworksTitle.js
-│   │   ├── 📁 header/                   # Cabecera
-│   │   │   ├── 📄 DemosDD.js
-│   │   │   ├── 📄 Header.js             # ⭐ Header principal
-│   │   │   ├── 📄 MobileSidebar.js
-│   │   │   └── 📄 Navigations.js
-│   │   └── 📁 testimonial/              # Testimonios
-│   │       ├── 📄 testimonial.css
-│   │       ├── 📄 Testimonial.js
-│   │       └── 📄 TestimonialTitle.js
-│   │
-│   ├── 📁 material-ui/                  # Componentes Material-UI
-│   │   ├── 📁 dialog/                   # Diálogos
-│   │   │   ├── 📄 AlertDialog.js
-│   │   │   ├── 📄 FormDialog.js
-│   │   │   ├── 📄 FullscreenDialog.js
-│   │   │   ├── 📄 MaxWidthDialog.js
-│   │   │   ├── 📄 ResponsiveDialog.js
-│   │   │   ├── 📄 ScrollContentDialog.js
-│   │   │   ├── 📄 SimpleDialog.js
-│   │   │   └── 📄 TransitionDialog.js
-│   │   ├── 📁 lists/                    # Listas
-│   │   │   ├── 📄 ControlsList.js
-│   │   │   ├── 📄 FolderList.js
-│   │   │   ├── 📄 NestedList.js
-│   │   │   ├── 📄 SelectedList.js
-│   │   │   ├── 📄 SimpleList.js
-│   │   │   └── 📄 SwitchList.js
-│   │   ├── 📁 popover/                  # Popovers
-│   │   │   ├── 📄 ClickPopover.js
-│   │   │   └── 📄 HoverPopover.js
-│   │   └── 📁 transfer-list/            # Lista transferencia
-│   │       ├── 📄 BasicTransferList.js
-│   │       └── 📄 EnhancedTransferList.js
-│   │
-│   ├── 📁 pages/                        # Páginas principales
-│   │   ├── 📁 account-setting/          # Configuración cuenta
-│   │   │   ├── 📄 AccountTab.js
-│   │   │   ├── 📄 BillsTab.js
-│   │   │   ├── 📄 NotificationTab.js
-│   │   │   └── 📄 SecurityTab.js
-│   │   ├── 📁 faq/                      # Preguntas frecuentes
-│   │   │   ├── 📄 Questions.js
-│   │   │   └── 📄 StillQuestions.js
-│   │   ├── 📁 landingpage/              # Landing page
-│   │   │   └── 📄 Landingpage.js
-│   │   ├── 📁 pricing/                  # Precios
-│   │   │   └── 📄 Pricing.js
-│   │   ├── 📁 rollbaseASL/              # RollbaseASL
-│   │   │   └── 📄 RollbaseASL.js
-│   │   ├── 📁 treeview/                 # Vista árbol
-│   │   │   └── 📄 Treeview.js
-│   │   ├── 📁 spinner/                  # Cargadores
-│   │   │   ├── 📄 spinner.css
-│   │   │   └── 📄 Spinner.js
-│   │   └── 📁 tables/                   # Tablas
-│   │       ├── 📄 BasicTable.js
-│   │       ├── 📄 CollapsibleTable.js
-│   │       ├── 📄 EnhancedTable.js
-│   │       ├── 📄 FixedHeaderTable.js
-│   │       ├── 📄 PaginationTable.js
-│   │       ├── 📄 SearchTable.js
-│   │       └── 📄 tableData.js
-│   │
-│   ├── 📁 shared/                       # Componentes compartidos
-│   │   ├── 📁 breadcrumb/               # Migas de pan
-│   │   │   └── 📄 Breadcrumb.js         # ⭐ Breadcrumb
-│   │   ├── 📁 customizer/               # Personalizador
-│   │   │   ├── 📄 Customizer.js         # ⭐ Customizer
-│   │   │   └── 📄 RTL.js                # ⭐ RTL support
-│   │   ├── 📁 loadable/                 # Carga lazy
-│   │   │   └── 📄 Loadable.js           # ⭐ Loadable
-│   │   ├── 📁 logo/                     # Logo
-│   │   │   └── 📄 Logo.js               # ⭐ Logo componente
-│   │   └── 📁 welcome/                  # Bienvenida
-│   │       └── 📄 Welcome.js            # ⭐ Welcome
-│   │
-│   ├── 📁 ui-components/                # Componentes UI
-│   │   ├── 📄 MuiAccordion.js          # ⭐ Acordeón
-│   │   ├── 📄 MuiAlert.js              # ⭐ Alertas
-│   │   ├── 📄 MuiAvatar.js             # ⭐ Avatar
-│   │   ├── 📄 MuiChip.js               # ⭐ Chips
-│   │   ├── 📄 MuiDialog.js             # ⭐ Diálogos
-│   │   ├── 📄 MuiList.js               # ⭐ Listas
-│   │   ├── 📄 MuiPopover.js            # ⭐ Popovers
-│   │   ├── 📄 MuiRating.js             # ⭐ Rating
-│   │   ├── 📄 MuiTabs.js               # ⭐ Tabs
-│   │   ├── 📄 MuiTooltip.js            # ⭐ Tooltips
-│   │   ├── 📄 MuiTransferList.js       # ⭐ Transfer List
-│   │   └── 📄 MuiTypography.js         # ⭐ Tipografía
-│   │
-│   ├── 📁 widgets/                      # Widgets
-│   │   ├── 📁 banners/                  # Banners
-│   │   │   ├── 📄 Banner1.js
-│   │   │   ├── 📄 Banner2.js
-│   │   │   ├── 📄 Banner3.js
-│   │   │   ├── 📄 Banner4.js
-│   │   │   ├── 📄 Banner5.js
-│   │   │   └── 📄 WidgetBanners.js
-│   │   ├── 📁 cards/                    # Tarjetas
-│   │   │   ├── 📄 ComplexCard.js
-│   │   │   ├── 📄 EcommerceCard.js
-│   │   │   ├── 📄 FollowerCard.js
-│   │   │   ├── 📄 FriendCard.js
-│   │   │   ├── 📄 GiftCard.js
-│   │   │   ├── 📄 MusicCard.js
-│   │   │   ├── 📄 ProfileCard.js
-│   │   │   ├── 📄 Settings.js
-│   │   │   ├── 📄 UpcomingActivity.js
-│   │   │   └── 📄 WidgetCards.js
-│   │   └── 📁 charts/                   # Gráficos
-│   │       ├── 📄 CurrentValue.js
-│   │       ├── 📄 Earned.js
-│   │       ├── 📄 Followers.js
-│   │       ├── 📄 MostVisited.js
-│   │       ├── 📄 PageImpressions.js
-│   │       ├── 📄 Views.js
-│   │       └── 📄 WidgetCharts.js
+│   │   ├── 📁 dashboards/               # Dashboards
+│   │   │   ├── 📁 ecommerce/            # Dashboard ecommerce
+│   │   │   │   ├── 📄 Expence.js
+│   │   │   │   ├── 📄 Growth.js
+│   │   │   │   ├── 📄 MonthlyEarnings.js
+│   │   │   │   ├── 📄 PaymentGateways.js
+│   │   │   │   ├── 📄 ProductPerformances.js
+│   │   │   │   ├── 📄 RecentTransactions.js
+│   │   │   │   ├── 📄 RevenueUpdates.js
+│   │   │   │   ├── 📄 Sales.js
+│   │   │   │   ├── 📄 SalesOverview.js
+│   │   │   │   ├── 📄 SalesTwo.js
+│   │   │   │   ├── 📄 TotalEarning.js
+│   │   │   │   ├── 📄 WelcomeCard.js
+│   │   │   │   └── 📄 YearlySales.js
+│   │   │   └── 📁 modern/               # Dashboard moderno
+│   │   │       ├── 📄 Customers.js
+│   │   │       ├── 📄 EmployeeSalary.js
+│   │   │       ├── 📄 MonthlyEarnings.js
+│   │   │       ├── 📄 Projects.js
+│   │   │       ├── 📄 RevenueUpdates.js
+│   │   │       ├── 📄 SellingProducts.js
+│   │   │       ├── 📄 Social.js
+│   │   │       ├── 📄 TopCards.js
+│   │   │       ├── 📄 TopPerformerData.js
+│   │   │       ├── 📄 TopPerformers.js
+│   │   │       ├── 📄 WeeklyStats.js
+│   │   │       └── 📄 YearlyBreakup.js
+│   │   ├── 📁 forms/                    # Componentes formularios
+│   │   │   ├── 📁 form-elements/        # Elementos formulario
+│   │   │   │   ├── 📁 autoComplete/     # Autocompletado
+│   │   │   │   │   ├── 📄 CheckboxesAutocomplete.js
+│   │   │   │   │   ├── 📄 ComboBoxAutocomplete.js
+│   │   │   │   │   ├── 📄 ControlledStateAutocomplete.js
+│   │   │   │   │   ├── 📄 countrydata.js
+│   │   │   │   │   ├── 📄 CountrySelectAutocomplete.js
+│   │   │   │   │   ├── 📄 data.js
+│   │   │   │   │   ├── 📄 FreeSoloAutocomplete.js
+│   │   │   │   │   ├── 📄 MultipleValuesAutocomplete.js
+│   │   │   │   │   └── 📄 SizesAutocomplete.js
+│   │   │   │   ├── 📁 button/           # Botones
+│   │   │   │   │   ├── 📄 ColorButtonGroup.js
+│   │   │   │   │   ├── 📄 ColorButtons.js
+│   │   │   │   │   ├── 📄 DefaultButtonGroup.js
+│   │   │   │   │   ├── 📄 DefaultButtons.js
+│   │   │   │   │   ├── 📄 FabColorButtons.js
+│   │   │   │   │   ├── 📄 FabDefaultButton.js
+│   │   │   │   │   ├── 📄 FabSizeButtons.js
+│   │   │   │   │   ├── 📄 IconColorButtons.js
+│   │   │   │   │   ├── 📄 IconLoadingButtons.js
+│   │   │   │   │   ├── 📄 IconSizeButtons.js
+│   │   │   │   │   ├── 📄 OutlinedColorButtons.js
+│   │   │   │   │   ├── 📄 OutlinedDefaultButtons.js
+│   │   │   │   │   ├── 📄 OutlinedIconButtons.js
+│   │   │   │   │   ├── 📄 OutlinedSizeButton.js
+│   │   │   │   │   ├── 📄 SizeButton.js
+│   │   │   │   │   ├── 📄 SizeButtonGroup.js
+│   │   │   │   │   ├── 📄 TextButtonGroup.js
+│   │   │   │   │   ├── 📄 TextColorButtons.js
+│   │   │   │   │   ├── 📄 TextDefaultButtons.js
+│   │   │   │   │   ├── 📄 TextIconButtons.js
+│   │   │   │   │   ├── 📄 TextSizeButton.js
+│   │   │   │   │   └── 📄 VerticalButtonGroup.js
+│   │   │   │   ├── 📁 checkbox/         # Checkboxes
+│   │   │   │   │   ├── 📄 Colors.js
+│   │   │   │   │   ├── 📄 Custom.js
+│   │   │   │   │   ├── 📄 Default.js
+│   │   │   │   │   ├── 📄 DefaultColors.js
+│   │   │   │   │   ├── 📄 Position.js
+│   │   │   │   │   └── 📄 Sizes.js
+│   │   │   │   ├── 📁 radio/            # Radio buttons
+│   │   │   │   │   ├── 📄 ColorLabel.js
+│   │   │   │   │   ├── 📄 Colors.js
+│   │   │   │   │   ├── 📄 Custom.js
+│   │   │   │   │   ├── 📄 Default.js
+│   │   │   │   │   ├── 📄 Position.js
+│   │   │   │   │   └── 📄 Sizes.js
+│   │   │   │   └── 📁 switch/           # Switches
+│   │   │   │       ├── 📄 Colors.js
+│   │   │   │       ├── 📄 Custom.js
+│   │   │   │       ├── 📄 Default.js
+│   │   │   │       ├── 📄 DefaultLabel.js
+│   │   │   │       ├── 📄 Position.js
+│   │   │   │       └── 📄 Sizes.js
+│   │   │   ├── 📁 form-horizontal/      # Formularios horizontales
+│   │   │   │   ├── 📄 BasicIcons.js
+│   │   │   │   ├── 📄 BasicLayout.js
+│   │   │   │   ├── 📄 CollapsibleForm.js
+│   │   │   │   ├── 📄 FormLabelAlignment.js
+│   │   │   │   ├── 📄 FormSeparator.js
+│   │   │   │   └── 📄 FormTabs.js
+│   │   │   ├── 📁 form-layouts/         # Layouts formularios
+│   │   │   │   ├── 📄 FbBasicHeaderForm.js
+│   │   │   │   ├── 📄 FbDefaultForm.js
+│   │   │   │   ├── 📄 FbDisabledForm.js
+│   │   │   │   ├── 📄 FbInputVariants.js
+│   │   │   │   ├── 📄 FbLeftIconForm.js
+│   │   │   │   ├── 📄 FbOrdinaryForm.js
+│   │   │   │   ├── 📄 FbReadonlyForm.js
+│   │   │   │   ├── 📄 FbRightIconForm.js
+│   │   │   │   └── 📄 index.js
+│   │   │   ├── 📁 form-validation/      # Validación formularios
+│   │   │   │   ├── 📄 FVCheckbox.js
+│   │   │   │   ├── 📄 FVLogin.js
+│   │   │   │   ├── 📄 FVOnLeave.js
+│   │   │   │   ├── 📄 FVRadio.js
+│   │   │   │   ├── 📄 FVRegister.js
+│   │   │   │   └── 📄 FVSelect.js
+│   │   │   ├── 📁 form-vertical/        # Formularios verticales
+│   │   │   │   ├── 📄 BasicIcons.js
+│   │   │   │   ├── 📄 BasicLayout.js
+│   │   │   │   ├── 📄 CollapsibleForm.js
+│   │   │   │   ├── 📄 FormSeparator.js
+│   │   │   │   └── 📄 FormTabs.js
+│   │   │   └── 📁 theme-elements/       # Elementos temáticos
+│   │   │       ├── 📄 CustomCheckbox.js
+│   │   │       ├── 📄 CustomDisabledButton.js
+│   │   │       ├── 📄 CustomFormLabel.js
+│   │   │       ├── 📄 CustomOutlinedButton.js
+│   │   │       ├── 📄 CustomOutlinedInput.js
+│   │   │       ├── 📄 CustomRadio.js
+│   │   │       ├── 📄 CustomRangeSlider.js
+│   │   │       ├── 📄 CustomSelect.js
+│   │   │       ├── 📄 CustomSlider.js
+│   │   │       ├── 📄 CustomSocialButton.js
+│   │   │       ├── 📄 CustomSwitch.js
+│   │   │       └── 📄 CustomTextField.js
+│   │   ├── 📁 landingpage/              # Página de inicio
+│   │   │   ├── 📁 animation/            # Animaciones
+│   │   │   │   └── 📄 Animation.js
+│   │   │   ├── 📁 banner/               # Banner principal
+│   │   │   │   ├── 📄 Banner.js
+│   │   │   │   └── 📄 BannerContent.js
+│   │   │   ├── 📁 c2a/                  # Call to Action
+│   │   │   │   ├── 📄 C2a.js
+│   │   │   │   ├── 📄 C2a2.js
+│   │   │   │   └── 📄 GuaranteeCard.js
+│   │   │   ├── 📁 demo-slider/          # Slider demos
+│   │   │   │   ├── 📄 demo-slider.css
+│   │   │   │   ├── 📄 DemoSlider.js
+│   │   │   │   └── 📄 DemoTitle.js
+│   │   │   ├── 📁 features/             # Características
+│   │   │   │   ├── 📄 Features.js
+│   │   │   │   └── 📄 FeaturesTitle.js
+│   │   │   ├── 📁 footer/               # Pie de página
+│   │   │   │   └── 📄 Footer.js
+│   │   │   ├── 📁 frameworks/           # Marcos de trabajo
+│   │   │   │   ├── 📄 Frameworks.js
+│   │   │   │   └── 📄 FrameworksTitle.js
+│   │   │   ├── 📁 header/               # Cabecera
+│   │   │   │   ├── 📄 DemosDD.js
+│   │   │   │   ├── 📄 Header.js
+│   │   │   │   ├── 📄 MobileSidebar.js
+│   │   │   │   └── 📄 Navigations.js
+│   │   │   └── 📁 testimonial/          # Testimonios
+│   │   │       ├── 📄 testimonial.css
+│   │   │       ├── 📄 Testimonial.js
+│   │   │       └── 📄 TestimonialTitle.js
+│   │   ├── 📁 material-ui/              # Componentes Material-UI
+│   │   │   ├── 📁 dialog/               # Diálogos
+│   │   │   │   ├── 📄 AlertDialog.js
+│   │   │   │   ├── 📄 FormDialog.js
+│   │   │   │   ├── 📄 FullscreenDialog.js
+│   │   │   │   ├── 📄 MaxWidthDialog.js
+│   │   │   │   ├── 📄 ResponsiveDialog.js
+│   │   │   │   ├── 📄 ScrollContentDialog.js
+│   │   │   │   ├── 📄 SimpleDialog.js
+│   │   │   │   └── 📄 TransitionDialog.js
+│   │   │   ├── 📁 lists/                # Listas
+│   │   │   │   ├── 📄 ControlsList.js
+│   │   │   │   ├── 📄 FolderList.js
+│   │   │   │   ├── 📄 NestedList.js
+│   │   │   │   ├── 📄 SelectedList.js
+│   │   │   │   ├── 📄 SimpleList.js
+│   │   │   │   └── 📄 SwitchList.js
+│   │   │   ├── 📁 popover/              # Popovers
+│   │   │   │   ├── 📄 ClickPopover.js
+│   │   │   │   └── 📄 HoverPopover.js
+│   │   │   └── 📁 transfer-list/        # Lista transferencia
+│   │   │       ├── 📄 BasicTransferList.js
+│   │   │       └── 📄 EnhancedTransferList.js
+│   │   ├── 📁 pages/                    # Páginas principales
+│   │   │   ├── 📁 account-setting/      # Configuración cuenta
+│   │   │   │   ├── 📄 AccountTab.js
+│   │   │   │   ├── 📄 BillsTab.js
+│   │   │   │   ├── 📄 NotificationTab.js
+│   │   │   │   └── 📄 SecurityTab.js
+│   │   │   └── 📁 faq/                  # Preguntas frecuentes
+│   │   │       ├── 📄 Questions.js
+│   │   │       └── 📄 StillQuestions.js
+│   │   ├── 📁 shared/                   # Componentes compartidos
+│   │   │   ├── 📄 AppCard.js
+│   │   │   ├── 📄 BaseCard.js
+│   │   │   ├── 📄 BlankCard.js
+│   │   │   ├── 📄 ChildCard.js
+│   │   │   ├── 📄 DashboardCard.js
+│   │   │   ├── 📄 DashboardWidgetCard.js
+│   │   │   ├── 📄 InlineItemCard.js
+│   │   │   ├── 📄 ParentCard.js
+│   │   │   ├── 📄 ScrollToTop.js
+│   │   │   ├── 📄 ThreeColumn.js
+│   │   │   └── 📄 WidgetCard.js
+│   │   └── 📁 widgets/                  # Widgets
+│   │       ├── 📁 banners/              # Banners
+│   │       │   ├── 📄 Banner1.js
+│   │       │   ├── 📄 Banner2.js
+│   │       │   ├── 📄 Banner3.js
+│   │       │   ├── 📄 Banner4.js
+│   │       │   └── 📄 Banner5.js
+│   │       ├── 📁 cards/                # Tarjetas
+│   │       │   ├── 📄 ComplexCard.js
+│   │       │   ├── 📄 EcommerceCard.js
+│   │       │   ├── 📄 FollowerCard.js
+│   │       │   ├── 📄 FriendCard.js
+│   │       │   ├── 📄 GiftCard.js
+│   │       │   ├── 📄 MusicCard.js
+│   │       │   ├── 📄 ProfileCard.js
+│   │       │   ├── 📄 Settings.js
+│   │       │   └── 📄 UpcomingActivity.js
+│   │       └── 📁 charts/               # Gráficos
+│   │           ├── 📄 CurrentValue.js
+│   │           ├── 📄 Earned.js
+│   │           ├── 📄 Followers.js
+│   │           ├── 📄 MostVisited.js
+│   │           ├── 📄 PageImpressions.js
+│   │           └── 📄 Views.js
 │   │
 │   ├── 📁 layouts/                      # Layouts principales
 │   │   ├── 📁 blank/                    # Layout vacío
-│   │   │   └── 📄 BlankLayout.js        # ⭐ Layout blanco
-│   │   ├── 📁 full/                     # Layout completo
-│   │   │   ├── 📁 horizontal/           # Layout horizontal
-│   │   │   │   └── 📁 header/           # Header horizontal
-│   │   │   │       └── 📄 Header.js
-│   │   │   │   └── 📁 navbar/           # Navbar horizontal
-│   │   │   │       ├── 📁 NavCollapse/  # Navegación colapsable
-│   │   │   │       │   └── 📄 NavCollapse.js
-│   │   │   │       ├── 📁 NavItem/      # Items navegación
-│   │   │   │       │   └── 📄 NavItem.js
-│   │   │   │       └── 📁 NavListing/   # Lista navegación
-│   │   │   │           ├── 📄 NavListing.js
-│   │   │   │           ├── 📄 Menudata.js
-│   │   │   │           └── 📄 Navbar.js
-│   │   │   └── 📁 vertical/             # Layout vertical
-│   │   │       ├── 📁 header/           # Header vertical
-│   │   │       │   ├── 📄 AppLinks.js
-│   │   │       │   ├── 📄 Cart.js
-│   │   │       │   ├── 📄 CartItems.js
-│   │   │       │   ├── 📄 data.js
-│   │   │       │   ├── 📄 dropdownData.js
-│   │   │       │   ├── 📄 Header.js     # ⭐ Header vertical
-│   │   │       │   ├── 📄 Language.js
-│   │   │       │   ├── 📄 MobileRightSidebar.js
-│   │   │       │   ├── 📄 Navigations.js
-│   │   │       │   ├── 📄 Notifications.js
-│   │   │       │   ├── 📄 Profile.js
-│   │   │       │   ├── 📄 QuickLinks.js
-│   │   │       │   └── 📄 Search.js
-│   │   │       └── 📁 sidebar/          # Sidebar vertical
-│   │   │           ├── 📁 NavCollapse/  # Navegación colapsable
-│   │   │           │   └── 📄 index.js
-│   │   │           ├── 📁 NavGroup/     # Grupos navegación
-│   │   │           │   └── 📄 NavGroup.js
-│   │   │           ├── 📁 NavItem/      # Items navegación
-│   │   │           │   └── 📄 index.js
-│   │   │           ├── 📁 SidebarProfile/ # Perfil sidebar
-│   │   │           │   └── 📄 Profile.js
-│   │   │           ├── 📄 MenuItems.js  # ⭐ Items menú
-│   │   │           ├── 📄 Sidebar.js    # ⭐ Sidebar principal
-│   │   │           ├── 📄 SidebarItems.js
-│   │   │           └── 📄 FullLayout.js # ⭐ Layout completo
+│   │   │   └── 📄 BlankLayout.js
+│   │   └── 📁 full/                     # Layout completo
+│   │       ├── 📄 FullLayout.js
+│   │       ├── 📁 horizontal/           # Layout horizontal
+│   │       │   ├── 📁 header/           # Header horizontal
+│   │       │   │   └── 📄 Header.js
+│   │       │   └── 📁 navbar/           # Navbar horizontal
+│   │       │       ├── 📄 Menudata.js
+│   │       │       ├── 📄 Navbar.js
+│   │       │       ├── 📁 NavCollapse/  # Navegación colapsable
+│   │       │       │   └── 📄 NavCollapse.js
+│   │       │       ├── 📁 NavItem/      # Items navegación
+│   │       │       │   └── 📄 NavItem.js
+│   │       │       └── 📁 NavListing/   # Lista navegación
+│   │       │           └── 📄 NavListing.js
+│   │       ├── 📁 shared/               # Compartidos entre layouts
+│   │       │   ├── 📁 breadcrumb/       # Migas de pan
+│   │       │   │   └── 📄 Breadcrumb.js
+│   │       │   ├── 📁 customizer/       # Personalizador
+│   │       │   │   ├── 📄 Customizer.js
+│   │       │   │   └── 📄 RTL.js
+│   │       │   ├── 📁 loadable/         # Carga lazy
+│   │       │   │   └── 📄 Loadable.js
+│   │       │   ├── 📁 logo/             # Logo
+│   │       │   │   └── 📄 Logo.js
+│   │       │   └── 📁 welcome/          # Bienvenida
+│   │       │       └── 📄 Welcome.js
+│   │       └── 📁 vertical/             # Layout vertical
+│   │           ├── 📁 header/           # Header vertical
+│   │           │   ├── 📄 AppLinks.js
+│   │           │   ├── 📄 Cart.js
+│   │           │   ├── 📄 CartItems.js
+│   │           │   ├── 📄 data.js
+│   │           │   ├── 📄 dropdownData.js
+│   │           │   ├── 📄 Header.js
+│   │           │   ├── 📄 Language.js
+│   │           │   ├── 📄 MobileRightSidebar.js
+│   │           │   ├── 📄 Navigation.js
+│   │           │   ├── 📄 Notifications.js
+│   │           │   ├── 📄 Profile.js
+│   │           │   ├── 📄 QuickLinks.js
+│   │           │   └── 📄 Search.js
+│   │           └── 📁 sidebar/          # Sidebar vertical
+│   │               ├── 📄 MenuItems.js
+│   │               ├── 📄 Sidebar.js
+│   │               ├── 📄 SidebarItems.js
+│   │               ├── 📁 NavCollapse/  # Navegación colapsable
+│   │               │   └── 📄 index.js
+│   │               ├── 📁 NavGroup/     # Grupos navegación
+│   │               │   └── 📄 NavGroup.js
+│   │               ├── 📁 NavItem/      # Items navegación
+│   │               │   └── 📄 index.js
+│   │               └── 📁 SidebarProfile/ # Perfil sidebar
+│   │                   └── 📄 Profile.js
 │   │
 │   ├── 📁 routes/                       # Rutas aplicación
-│   │   └── 📄 Router.js                 # ⭐ Router principal
+│   │   └── 📄 Router.js
 │   │
 │   ├── 📁 store/                        # Estado global
+│   │   ├── 📄 Store.js
 │   │   ├── 📁 apps/                     # Store aplicaciones
 │   │   │   ├── 📁 blog/                 # Store blog
 │   │   │   │   └── 📄 BlogSlice.js
@@ -578,10 +585,7 @@ FRONTEND/
 │   │   │   ├── 📁 contacts/             # Store contactos
 │   │   │   │   └── 📄 ContactSlice.js
 │   │   │   ├── 📁 eCommerce/            # Store ecommerce
-│   │   │   │   ├── 📄 EcommerceSlice.js
-│   │   │   │   ├── 📄 EcommerceCheckout.js
-│   │   │   │   ├── 📄 EcommerceDetail.js
-│   │   │   │   └── 📄 EcomProductList.js
+│   │   │   │   └── 📄 EcommerceSlice.js
 │   │   │   ├── 📁 email/                # Store email
 │   │   │   │   └── 📄 EmailSlice.js
 │   │   │   ├── 📁 notes/                # Store notas
@@ -589,155 +593,154 @@ FRONTEND/
 │   │   │   ├── 📁 tickets/              # Store tickets
 │   │   │   │   └── 📄 TicketSlice.js
 │   │   │   └── 📁 userProfile/          # Store perfil
-│   │   │       ├── 📄 UserProfileSlice.js
-│   │   │       ├── 📄 Followers.js
-│   │   │       ├── 📄 Friends.js
-│   │   │       ├── 📄 Gallery.js
-│   │   │       └── 📄 UserProfile.js
-│   │   ├── 📁 customizer/               # Store customizer
-│   │   │   ├── 📄 CustomizerSlice.js    # ⭐ Configuración tema
-│   │   │   └── 📄 Store.js              # ⭐ Store principal
-│   │   ├── 📁 theme/                    # Store tema
-│   │   │   ├── 📄 Components.js         # ⭐ Componentes tema
-│   │   │   ├── 📄 DarkThemeColors.js    # ⭐ Colores tema oscuro
-│   │   │   ├── 📄 DefaultColors.js      # ⭐ Colores por defecto
-│   │   │   ├── 📄 LightThemeColors.js   # ⭐ Colores tema claro
-│   │   │   ├── 📄 Shadows.js            # ⭐ Sombras
-│   │   │   ├── 📄 Theme.js              # ⭐ Tema principal
-│   │   │   └── 📄 Typography.js         # ⭐ Tipografía
-│   │   └── 📁 utils/                    # Utilidades store
-│   │       ├── 📁 languages/            # Idiomas
-│   │       │   ├── 📄 ar.json           # Árabe
-│   │       │   ├── 📄 ch.json           # Chino
-│   │       │   ├── 📄 en.json           # Inglés
-│   │       │   ├── 📄 fr.json           # Francés
-│   │       │   ├── 📄 axios.js          # ⭐ Cliente HTTP
-│   │       │   └── 📄 i18n.js           # ⭐ Internacionalización
+│   │   │       └── 📄 UserProfileSlice.js
+│   │   └── 📁 customizer/               # Store customizer
+│   │       └── 📄 CustomizerSlice.js
 │   │
-│   ├── 📁 views/                        # Vistas aplicación
-│   │   ├── 📁 apps/                     # Vistas aplicaciones
-│   │   │   ├── 📁 blog/                 # Vistas blog
-│   │   │   │   ├── 📄 Blog.js           # ⭐ Lista blog
-│   │   │   │   └── 📄 BlogPost.js       # ⭐ Post blog
-│   │   │   ├── 📁 calendar/             # Vista calendario
-│   │   │   │   ├── 📄 BigCalendar.js    # ⭐ Calendario principal
-│   │   │   │   ├── 📄 Calendar.css
-│   │   │   │   └── 📄 EventData.js
-│   │   │   ├── 📁 chat/                 # Vista chat
-│   │   │   │   └── 📄 Chat.js           # ⭐ Chat principal
-│   │   │   ├── 📁 contacts/             # Vista contactos
-│   │   │   │   └── 📄 Contacts.js       # ⭐ Lista contactos
-│   │   │   ├── 📁 eCommerce/            # Vistas ecommerce
-│   │   │   │   ├── 📄 Ecommerce.js      # ⭐ Tienda principal
-│   │   │   │   ├── 📄 EcommerceCheckout.js # ⭐ Checkout
-│   │   │   │   ├── 📄 EcommerceDetail.js   # ⭐ Detalle producto
-│   │   │   │   └── 📄 EcomProductList.js   # ⭐ Lista productos
-│   │   │   ├── 📁 email/                # Vista email
-│   │   │   │   └── 📄 Email.js          # ⭐ Email principal
-│   │   │   ├── 📁 notes/                # Vista notas
-│   │   │   │   └── 📄 Notes.js          # ⭐ Notas principal
-│   │   │   ├── 📁 tickets/              # Vista tickets
-│   │   │   │   └── 📄 Tickets.js        # ⭐ Lista tickets
-│   │   │   └── 📁 user-profile/         # Vista perfil
-│   │   │       ├── 📄 Followers.js      # ⭐ Seguidores
-│   │   │       ├── 📄 Friends.js        # ⭐ Amigos
-│   │   │       ├── 📄 Gallery.js        # ⭐ Galería
-│   │   │       └── 📄 UserProfile.js    # ⭐ Perfil usuario
-│   │   ├── 📁 authentication/           # Vistas autenticación
-│   │   │   ├── 📁 auth1/                # Auth estilo 1
-│   │   │   │   ├── 📄 ForgotPassword.js # ⭐ Recuperar contraseña
-│   │   │   │   ├── 📄 Login.js          # ⭐ Login
-│   │   │   │   ├── 📄 Register.js       # ⭐ Registro
-│   │   │   │   └── 📄 TwoSteps.js       # ⭐ Dos pasos
-│   │   │   ├── 📁 auth2/                # Auth estilo 2
-│   │   │   │   ├── 📄 ForgotPassword2.js
-│   │   │   │   ├── 📄 Login2.js
-│   │   │   │   ├── 📄 Register2.js
-│   │   │   │   └── 📄 TwoSteps2.js
-│   │   │   ├── 📁 authForms/            # Formularios auth
-│   │   │   │   ├── 📄 AuthForgotPassword.js
-│   │   │   │   ├── 📄 AuthLogin.js      # ⭐ Form login
-│   │   │   │   ├── 📄 AuthRegister.js   # ⭐ Form registro
-│   │   │   │   ├── 📄 AuthSocialButtons.js
-│   │   │   │   └── 📄 AuthTwoSteps.js
-│   │   │   ├── 📄 Error.js              # ⭐ Página error
-│   │   │   └── 📄 Maintenance.js        # ⭐ Mantenimiento
-│   │   ├── 📁 charts/                   # Vistas gráficos
-│   │   │   ├── 📄 AreaChart.js
-│   │   │   ├── 📄 CandlestickChart.js
-│   │   │   ├── 📄 ColumnChart.js
-│   │   │   ├── 📄 DoughnutChart.js
-│   │   │   ├── 📄 GredientChart.js
-│   │   │   ├── 📄 LineChart.js
-│   │   │   └── 📄 RadialbarChart.js
-│   │   ├── 📁 dashboard/                # Vistas dashboard
-│   │   │   ├── 📄 Ecommerce.js          # ⭐ Dashboard ecommerce
-│   │   │   └── 📄 Modern.js             # ⭐ Dashboard moderno
-│   │   ├── 📁 forms/                    # Vistas formularios
-│   │   │   ├── 📁 form-elements/        # Elementos formulario
-│   │   │   │   ├── 📄 MuiAutoComplete.js
-│   │   │   │   ├── 📄 MuiButton.js
-│   │   │   │   ├── 📄 MuiCheckbox.js
-│   │   │   │   ├── 📄 MuiDateTime.js
-│   │   │   │   ├── 📄 MuiRadio.js
-│   │   │   │   ├── 📄 MuiSlider.js
-│   │   │   │   └── 📄 MuiSwitch.js
-│   │   │   ├── 📁 quill-editor/         # Editor Quill
-│   │   │   │   ├── 📄 Quill.css
-│   │   │   │   ├── 📄 QuillEditor.js
-│   │   │   │   ├── 📄 FormCustom.js
-│   │   │   │   ├── 📄 FormHorizontal.js
-│   │   │   │   ├── 📄 FormLayouts.js
-│   │   │   │   ├── 📄 FormValidation.js
-│   │   │   │   ├── 📄 FormVertical.js
-│   │   │   │   └── 📄 FormWizard.js
-│   │   │   └── 📄 index.js
-│   │   ├── 📁 pages/                    # Vistas páginas
-│   │   │   ├── 📁 account-setting/      # Configuración cuenta
-│   │   │   │   └── 📄 AccountSetting.js
-│   │   │   ├── 📁 faq/                  # Preguntas frecuentes
-│   │   │   │   └── 📄 Faq.js
-│   │   │   ├── 📁 landingpage/          # Landing page
-│   │   │   │   └── 📄 Landingpage.js
-│   │   │   ├── 📁 pricing/              # Precios
-│   │   │   │   └── 📄 Pricing.js
-│   │   │   ├── 📁 rollbaseASL/          # RollbaseASL
-│   │   │   │   └── 📄 RollbaseASL.js
-│   │   │   ├── 📁 treeview/             # Vista árbol
-│   │   │   │   └── 📄 Treeview.js
-│   │   │   ├── 📁 spinner/              # Spinner
-│   │   │   │   ├── 📄 spinner.css
-│   │   │   │   └── 📄 Spinner.js
-│   │   │   └── 📁 tables/               # Tablas
-│   │   │       ├── 📄 BasicTable.js
-│   │   │       ├── 📄 CollapsibleTable.js
-│   │   │       ├── 📄 EnhancedTable.js
-│   │   │       ├── 📄 FixedHeaderTable.js
-│   │   │       ├── 📄 PaginationTable.js
-│   │   │       └── 📄 SearchTable.js
-│   │   └── 📁 ui-components/            # Vistas componentes UI
-│   │       ├── 📄 MuiAccordion.js
-│   │       ├── 📄 MuiAlert.js
-│   │       ├── 📄 MuiAvatar.js
-│   │       ├── 📄 MuiChip.js
-│   │       ├── 📄 MuiDialog.js
-│   │       ├── 📄 MuiList.js
-│   │       ├── 📄 MuiPopover.js
-│   │       ├── 📄 MuiRating.js
-│   │       ├── 📄 MuiTabs.js
-│   │       ├── 📄 MuiTooltip.js
-│   │       ├── 📄 MuiTransferList.js
-│   │       └── 📄 MuiTypography.js
+│   ├── 📁 theme/                        # Configuración tema
+│   │   ├── 📄 Components.js
+│   │   ├── 📄 DarkThemeColors.js
+│   │   ├── 📄 DefaultColors.js
+│   │   ├── 📄 LightThemeColors.js
+│   │   ├── 📄 Shadows.js
+│   │   ├── 📄 Theme.js
+│   │   └── 📄 Typography.js
 │   │
-│   └── 📁 widgets/                      # Widgets vista
-│       ├── 📁 banners/                  # Widgets banners
-│       │   └── 📄 WidgetBanners.js
-│       ├── 📁 cards/                    # Widgets tarjetas
-│       │   └── 📄 WidgetCards.js
-│       └── 📁 charts/                   # Widgets gráficos
-│           └── 📄 WidgetCharts.js
-└── 📁 layouts/                          # Layouts principales
-    └── 📄 layouts.js                    # ⭐ Configuración layouts
+│   ├── 📁 utils/                        # Utilidades
+│   │   ├── 📄 axios.js
+│   │   ├── 📄 i18n.js
+│   │   └── 📁 languages/                # Idiomas
+│   │       ├── 📄 ar.json
+│   │       ├── 📄 ch.json
+│   │       ├── 📄 en.json
+│   │       └── 📄 fr.json
+│   │
+│   └── 📁 views/                        # Vistas aplicación
+│       ├── 📁 apps/                     # Vistas aplicaciones
+│       │   ├── 📁 blog/                 # Vistas blog
+│       │   │   ├── 📄 Blog.js
+│       │   │   └── 📄 BlogPost.js
+│       │   ├── 📁 calendar/             # Vista calendario
+│       │   │   ├── 📄 BigCalendar.js
+│       │   │   ├── 📄 Calendar.css
+│       │   │   └── 📄 EventData.js
+│       │   ├── 📁 chat/                 # Vista chat
+│       │   │   └── 📄 Chat.js
+│       │   ├── 📁 contacts/             # Vista contactos
+│       │   │   └── 📄 Contacts.js
+│       │   ├── 📁 eCommerce/            # Vistas ecommerce
+│       │   │   ├── 📄 Ecommerce.js
+│       │   │   ├── 📄 EcommerceCheckout.js
+│       │   │   ├── 📄 EcommerceDetail.js
+│       │   │   └── 📄 EcomProductList.js
+│       │   ├── 📁 email/                # Vista email
+│       │   │   └── 📄 Email.js
+│       │   ├── 📁 notes/                # Vista notas
+│       │   │   └── 📄 Notes.js
+│       │   ├── 📁 tickets/              # Vista tickets
+│       │   │   └── 📄 Tickets.js
+│       │   └── 📁 user-profile/         # Vista perfil
+│       │       ├── 📄 Followers.js
+│       │       ├── 📄 Friends.js
+│       │       ├── 📄 Gallery.js
+│       │       └── 📄 UserProfile.js
+│       ├── 📁 authentication/           # Vistas autenticación
+│       │   ├── 📄 Error.js
+│       │   ├── 📄 Maintenance.js
+│       │   ├── 📁 auth1/                # Auth estilo 1
+│       │   │   ├── 📄 ForgotPassword.js
+│       │   │   ├── 📄 Login.js
+│       │   │   ├── 📄 Register.js
+│       │   │   └── 📄 TwoSteps.js
+│       │   ├── 📁 auth2/                # Auth estilo 2
+│       │   │   ├── 📄 ForgotPassword2.js
+│       │   │   ├── 📄 Login2.js
+│       │   │   ├── 📄 Register2.js
+│       │   │   └── 📄 TwoSteps2.js
+│       │   └── 📁 authForms/            # Formularios auth
+│       │       ├── 📄 AuthForgotPassword.js
+│       │       ├── 📄 AuthLogin.js
+│       │       ├── 📄 AuthRegister.js
+│       │       ├── 📄 AuthSocialButtons.js
+│       │       └── 📄 AuthTwoSteps.js
+│       ├── 📁 charts/                   # Vistas gráficos
+│       │   ├── 📄 AreaChart.js
+│       │   ├── 📄 CandlestickChart.js
+│       │   ├── 📄 ColumnChart.js
+│       │   ├── 📄 DoughnutChart.js
+│       │   ├── 📄 GredientChart.js
+│       │   ├── 📄 LineChart.js
+│       │   └── 📄 RadialbarChart.js
+│       ├── 📁 dashboard/                # Vistas dashboard
+│       │   ├── 📄 Ecommerce.js
+│       │   └── 📄 Modern.js
+│       ├── 📁 forms/                    # Vistas formularios
+│       │   ├── 📄 FormCustom.js
+│       │   ├── 📄 FormHorizontal.js
+│       │   ├── 📄 FormLayouts.js
+│       │   ├── 📄 FormValidation.js
+│       │   ├── 📄 FormVertical.js
+│       │   ├── 📄 FormWizard.js
+│       │   ├── 📁 form-elements/        # Elementos formulario
+│       │   │   ├── 📄 MuiAutoComplete.js
+│       │   │   ├── 📄 MuiButton.js
+│       │   │   ├── 📄 MuiCheckbox.js
+│       │   │   ├── 📄 MuiDateTime.js
+│       │   │   ├── 📄 MuiRadio.js
+│       │   │   ├── 📄 MuiSlider.js
+│       │   │   └── 📄 MuiSwitch.js
+│       │   └── 📁 quill-editor/         # Editor Quill
+│       │       ├── 📄 Quill.css
+│       │       └── 📄 QuillEditor.js
+│       ├── 📁 pages/                    # Vistas páginas
+│       │   ├── 📁 account-setting/      # Configuración cuenta
+│       │   │   └── 📄 AccountSetting.js
+│       │   ├── 📁 faq/                  # Preguntas frecuentes
+│       │   │   └── 📄 Faq.js
+│       │   ├── 📁 landingpage/          # Landing page
+│       │   │   └── 📄 Landingpage.js
+│       │   ├── 📁 pricing/              # Precios
+│       │   │   └── 📄 Pricing.js
+│       │   ├── 📁 rollbaseCASL/         # RollbaseCASL
+│       │   │   └── 📄 RollbaseCASL.js
+│       │   └── 📁 treeview/             # Vista árbol
+│       │       └── 📄 Treeview.js
+│       ├── 📁 security/                 # Vistas de seguridad
+│       │   ├── 📄 MenuManagement.js
+│       │   ├── 📄 RoleManagement.js
+│       │   ├── 📄 SecurityDashboard.js
+│       │   └── 📄 UserManagement.js
+│       ├── 📁 spinner/                  # Spinner
+│       │   ├── 📄 spinner.css
+│       │   └── 📄 Spinner.js
+│       ├── 📁 tables/                   # Tablas
+│       │   ├── 📄 BasicTable.js
+│       │   ├── 📄 CollapsibleTable.js
+│       │   ├── 📄 EnhancedTable.js
+│       │   ├── 📄 FixedHeaderTable.js
+│       │   ├── 📄 PaginationTable.js
+│       │   ├── 📄 SearchTable.js
+│       │   └── 📄 tableData.js
+│       ├── 📁 ui-components/            # Vistas componentes UI
+│       │   ├── 📄 MuiAccordion.js
+│       │   ├── 📄 MuiAlert.js
+│       │   ├── 📄 MuiAvatar.js
+│       │   ├── 📄 MuiChip.js
+│       │   ├── 📄 MuiDialog.js
+│       │   ├── 📄 MuiList.js
+│       │   ├── 📄 MuiPopover.js
+│       │   ├── 📄 MuiRating.js
+│       │   ├── 📄 MuiTabs.js
+│       │   ├── 📄 MuiTooltip.js
+│       │   ├── 📄 MuiTransferList.js
+│       │   └── 📄 MuiTypography.js
+│       └── 📁 widgets/                  # Widgets vista
+│           ├── 📁 banners/              # Widgets banners
+│           │   └── 📄 WidgetBanners.js
+│           ├── 📁 cards/                # Widgets tarjetas
+│           │   └── 📄 WidgetCards.js
+│           └── 📁 charts/               # Widgets gráficos
+│               └── 📄 WidgetCharts.js
 
 ---
 
